@@ -2,14 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Throw extends Model
 {
-    use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -36,13 +32,4 @@ class User extends Authenticatable
     protected $casts = [
         //
     ];
-
-    /**
-     * Get the Games for the User.
-     */
-    public function games()
-    {
-        return $this->belongsToMany(\App\Game::class);
-    }
-
 }
